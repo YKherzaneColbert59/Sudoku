@@ -208,7 +208,7 @@ class Grid:
             sont valides
         """
         a = []
-        if '.' in s.puzzleNow == False:
+        if '.' in self.puzzleNow == False:
             for i in range(81):
                 if self.cases(i).position.valid == True:
                     a.append('.')
