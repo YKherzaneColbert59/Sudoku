@@ -200,7 +200,25 @@ class Grid:
         b=self.verifRow(position)
         c=self.verifRegion(position)
         return a and b and c
-        
+    
+    def checkWin(self):
+        """
+            Vérifie si une grille est gagnante ou pas.
+            Une grille est gagnante si elle est remplie et que toutes les cases
+            sont valides
+        """
+        a = []
+        if '.' in s.puzzleNow == False:
+            for i in range(81):
+                if self.cases(i).position.valid == True:
+                    a.append('.')
+                else:
+                    a.append(';')
+            if ';' in a:
+                return False
+            else:
+                return True
+                
                     
     def __repr__(self):
         """

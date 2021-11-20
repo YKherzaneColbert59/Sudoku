@@ -19,11 +19,12 @@ class Case:
             (1, 9, 3)
         """
         self.position = pos
-        self.value = value
-        self.row = pos%9
-        self.line = pos//9
-        self.region = pos//9+1
-    
+        self.row      = pos%9    # Colonne
+        self.line     = pos//9   # Ligne
+        self.value    = value
+        self.region   = (self.line//3)*3+self.row//3+1
+        self.valid    = True     # Validité par défaut
+        
     def setValue(self, value):
         """
             Mutateur de l'attribut value
